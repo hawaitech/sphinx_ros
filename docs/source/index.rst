@@ -1,19 +1,7 @@
 Sphinx |ROS| extension
 ======================
 
-.. image:: https://img.shields.io/pypi/v/sphinx-ros
-  :target: https://pypi.org/project/sphinx-ros/
-  :alt: PyPi version
-
-.. image:: https://img.shields.io/pypi/dm/sphinx-ros
-  :target: https://pypi.org/project/sphinx-ros/
-  :alt: PyPi downloads per month
-
-.. image:: https://img.shields.io/readthedocs/sphinx-ros/latest
-  :target: https://sphinx-ros.readthedocs.io/en/latest/
-  :alt: Documentation Status
-
-:Author: M.J.W. Snippe
+:Author: HawAI.tech
 :Version: |version|
 :Release: |release|
 
@@ -22,13 +10,5 @@ Sphinx |ROS| extension
   :caption: Contents:
 
   getting_started
-  modules
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`ros-pkgindex`
-* :ref:`ros-msgindex`
+  modules/sphinx_ros
+  indices_and_tables
