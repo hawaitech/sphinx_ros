@@ -1,0 +1,20 @@
+sphinx\_ros package
+===================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   sphinx_ros.directives
+   sphinx_ros.domain
+   sphinx_ros.indices
+   sphinx_ros.xref_role
+
+Module contents
+---------------
+
+.. automodule:: sphinx_ros
+   :members:
+   :show-inheritance:

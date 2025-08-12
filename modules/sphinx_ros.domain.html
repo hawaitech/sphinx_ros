@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sphinx_ros.domain module &mdash; ROS Sphinx domain 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/Icon_016x016.png"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sphinx_ros.indices module" href="sphinx_ros.indices.html" />
+    <link rel="prev" title="sphinx_ros.directives module" href="sphinx_ros.directives.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ROSphinx.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sphinx_ros.html">sphinx_ros package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sphinx_ros.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="sphinx_ros.directives.html">sphinx_ros.directives module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">sphinx_ros.domain module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">sphinx_ros.domain</span></code> module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.domain.RosDomain"><code class="docutils literal notranslate"><span class="pre">RosDomain</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_ros.indices.html">sphinx_ros.indices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_ros.xref_role.html">sphinx_ros.xref_role module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_ros.html#module-sphinx_ros">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../indices_and_tables.html">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ROS Sphinx domain</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="sphinx_ros.html">sphinx_ros package</a></li>
+      <li class="breadcrumb-item active">sphinx_ros.domain module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/sphinx_ros.domain.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sphinx_ros.domain">
+<span id="sphinx-ros-domain-module"></span><h1>sphinx_ros.domain module<a class="headerlink" href="#module-sphinx_ros.domain" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2><code class="docutils literal notranslate"><span class="pre">sphinx_ros.domain</span></code> module<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>This module defines the ROS domain. It defines three object types (messages,
+services, and actions) and registers the roles and directives in the Sphinx
+application.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.domain.</span></span><span class="sig-name descname"><span class="pre">RosDomain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BuildEnvironment</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://www.sphinx-doc.org/en/master/extdev/domainapi.html#sphinx.domains.Domain" title="(in Sphinx v8.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code></a></p>
+<p>The actual domain class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.add_package">
+<span class="sig-name descname"><span class="pre">add_package</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deprecated</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain.add_package"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain.add_package" title="Link to this definition"></a></dt>
+<dd><p>Adds a package to the domain data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name of the package</p></li>
+<li><p><strong>deprecated</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – Indicates whether the package is deprecated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The unique anchor of the package.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.clear_doc">
+<span class="sig-name descname"><span class="pre">clear_doc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain.clear_doc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain.clear_doc" title="Link to this definition"></a></dt>
+<dd><p>Remove traces of a document in the domain-specific inventories.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.directives">
+<span class="sig-name descname"><span class="pre">directives</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.13)"><span class="pre">type</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Directive</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'action':</span> <span class="pre">&lt;class</span> <span class="pre">'sphinx_ros.directives.RosActionDirective'&gt;,</span> <span class="pre">'currentpackage':</span> <span class="pre">&lt;class</span> <span class="pre">'sphinx_ros.directives.RosCurrentPackageDirective'&gt;,</span> <span class="pre">'message':</span> <span class="pre">&lt;class</span> <span class="pre">'sphinx_ros.directives.RosMessageDirective'&gt;,</span> <span class="pre">'package':</span> <span class="pre">&lt;class</span> <span class="pre">'sphinx_ros.directives.RosPackageDirective'&gt;,</span> <span class="pre">'service':</span> <span class="pre">&lt;class</span> <span class="pre">'sphinx_ros.directives.RosServiceDirective'&gt;}</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.directives" title="Link to this definition"></a></dt>
+<dd><p>directive name -&gt; directive class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.find_obj">
+<span class="sig-name descname"><span class="pre">find_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkgname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain.find_obj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain.find_obj" title="Link to this definition"></a></dt>
+<dd><p>Find a ROS object for <code class="docutils literal notranslate"><span class="pre">name</span></code>, perhaps using <code class="docutils literal notranslate"><span class="pre">pkgname</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.get_objects">
+<span class="sig-name descname"><span class="pre">get_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain.get_objects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain.get_objects" title="Link to this definition"></a></dt>
+<dd><p>Return an iterable of “object descriptions”.</p>
+<p>Object descriptions are tuples with six items:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">name</span></code></dt><dd><p>Fully qualified name.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">dispname</span></code></dt><dd><p>Name to display when searching/linking.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code></dt><dd><p>Object type, a key in <code class="docutils literal notranslate"><span class="pre">self.object_types</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">docname</span></code></dt><dd><p>The document where it is to be found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">anchor</span></code></dt><dd><p>The anchor name for the object.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">priority</span></code></dt><dd><p>How “important” the object is (determines placement in search
+results). One of:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">1</span></code></dt><dd><p>Default priority (placed before full-text matches).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">0</span></code></dt><dd><p>Object is important (placed before default-priority objects).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">2</span></code></dt><dd><p>Object is unimportant (placed after full-text matches).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-1</span></code></dt><dd><p>Object should not show up in search at all.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.indices">
+<span class="sig-name descname"><span class="pre">indices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.13)"><span class="pre">type</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Index</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'sphinx_ros.indices.RosPackageIndex'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'sphinx_ros.indices.RosMessageIndex'&gt;]</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.indices" title="Link to this definition"></a></dt>
+<dd><p>a list of Index subclasses</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.initial_data">
+<span class="sig-name descname"><span class="pre">initial_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'anonlabels':</span> <span class="pre">{'ros-msgindex':</span> <span class="pre">('ros-msgindex',</span> <span class="pre">''),</span> <span class="pre">'ros-pkgindex':</span> <span class="pre">('ros-pkgindex',</span> <span class="pre">'')},</span> <span class="pre">'labels':</span> <span class="pre">{'ros-msgindex':</span> <span class="pre">('ros-msgindex',</span> <span class="pre">'',</span> <span class="pre">'Message</span> <span class="pre">Type</span> <span class="pre">Index'),</span> <span class="pre">'ros-pkgindex':</span> <span class="pre">('ros-pkgindex',</span> <span class="pre">'',</span> <span class="pre">'Package</span> <span class="pre">Index')},</span> <span class="pre">'messages':</span> <span class="pre">{},</span> <span class="pre">'objects':</span> <span class="pre">{},</span> <span class="pre">'packages':</span> <span class="pre">{}}</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.initial_data" title="Link to this definition"></a></dt>
+<dd><p>data value for a fresh environment</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.label">
+<span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ROS'</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.label" title="Link to this definition"></a></dt>
+<dd><p>longer, more descriptive (used in messages)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>domain label</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ros'</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.name" title="Link to this definition"></a></dt>
+<dd><p>should be short, but unique</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>domain name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.object_types">
+<span class="sig-name descname"><span class="pre">object_types</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ObjType</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'action':</span> <span class="pre">&lt;sphinx.domains.ObjType</span> <span class="pre">object&gt;,</span> <span class="pre">'message':</span> <span class="pre">&lt;sphinx.domains.ObjType</span> <span class="pre">object&gt;,</span> <span class="pre">'service':</span> <span class="pre">&lt;sphinx.domains.ObjType</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.object_types" title="Link to this definition"></a></dt>
+<dd><p>type (usually directive) name -&gt; ObjType instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.resolve_any_xref">
+<span class="sig-name descname"><span class="pre">resolve_any_xref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fromdocname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contnode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain.resolve_any_xref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain.resolve_any_xref" title="Link to this definition"></a></dt>
+<dd><p>Resolve the pending_xref <em>node</em> with the given <em>target</em>.</p>
+<p>The reference comes from an “any” or similar role, which means that we
+don’t know the type.  Otherwise, the arguments are the same as for
+<a class="reference internal" href="#sphinx_ros.domain.RosDomain.resolve_xref" title="sphinx_ros.domain.RosDomain.resolve_xref"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resolve_xref()</span></code></a>.</p>
+<p>The method must return a list (potentially empty) of tuples
+<code class="docutils literal notranslate"><span class="pre">('domain:role',</span> <span class="pre">newnode)</span></code>, where <code class="docutils literal notranslate"><span class="pre">'domain:role'</span></code> is the name of a
+role that could have created the same reference, e.g. <code class="docutils literal notranslate"><span class="pre">'py:func'</span></code>.
+<code class="docutils literal notranslate"><span class="pre">newnode</span></code> is what <a class="reference internal" href="#sphinx_ros.domain.RosDomain.resolve_xref" title="sphinx_ros.domain.RosDomain.resolve_xref"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resolve_xref()</span></code></a> would return.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.resolve_xref">
+<span class="sig-name descname"><span class="pre">resolve_xref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fromdocname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">builder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contnode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/domain.html#RosDomain.resolve_xref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.domain.RosDomain.resolve_xref" title="Link to this definition"></a></dt>
+<dd><p>Resolve the pending_xref <em>node</em> with the given <em>typ</em> and <em>target</em>.</p>
+<p>This method should return a new node, to replace the xref node,
+containing the <em>contnode</em> which is the markup content of the
+cross-reference.</p>
+<p>If no resolution can be found, None can be returned; the xref node will
+then given to the <a href="#id2"><span class="problematic" id="id3">:event:`missing-reference`</span></a> event, and if that yields no
+resolution, replaced by <em>contnode</em>.</p>
+<p>The method can also raise <code class="xref py py-exc docutils literal notranslate"><span class="pre">sphinx.environment.NoUri</span></code> to suppress
+the <a href="#id4"><span class="problematic" id="id5">:event:`missing-reference`</span></a> event being emitted.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.domain.RosDomain.roles">
+<span class="sig-name descname"><span class="pre">roles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">RoleFunction</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">XRefRole</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'act':</span> <span class="pre">&lt;sphinx_ros.xref_role.RosXRefRole</span> <span class="pre">object&gt;,</span> <span class="pre">'msg':</span> <span class="pre">&lt;sphinx_ros.xref_role.RosXRefRole</span> <span class="pre">object&gt;,</span> <span class="pre">'pkg':</span> <span class="pre">&lt;sphinx_ros.xref_role.RosXRefRole</span> <span class="pre">object&gt;,</span> <span class="pre">'srv':</span> <span class="pre">&lt;sphinx_ros.xref_role.RosXRefRole</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#sphinx_ros.domain.RosDomain.roles" title="Link to this definition"></a></dt>
+<dd><p>role name -&gt; role callable</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sphinx_ros.directives.html" class="btn btn-neutral float-left" title="sphinx_ros.directives module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sphinx_ros.indices.html" class="btn btn-neutral float-right" title="sphinx_ros.indices module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, HawAI.tech.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

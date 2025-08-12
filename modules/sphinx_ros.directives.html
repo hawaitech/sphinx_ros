@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sphinx_ros.directives module &mdash; ROS Sphinx domain 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/Icon_016x016.png"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sphinx_ros.domain module" href="sphinx_ros.domain.html" />
+    <link rel="prev" title="sphinx_ros package" href="sphinx_ros.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ROSphinx.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sphinx_ros.html">sphinx_ros package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sphinx_ros.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">sphinx_ros.directives module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">sphinx_ros.directives</span></code> module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosActionDirective"><code class="docutils literal notranslate"><span class="pre">RosActionDirective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosCurrentPackageDirective"><code class="docutils literal notranslate"><span class="pre">RosCurrentPackageDirective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosField"><code class="docutils literal notranslate"><span class="pre">RosField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosMessageDirective"><code class="docutils literal notranslate"><span class="pre">RosMessageDirective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosObject"><code class="docutils literal notranslate"><span class="pre">RosObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosPackageDirective"><code class="docutils literal notranslate"><span class="pre">RosPackageDirective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosServiceDirective"><code class="docutils literal notranslate"><span class="pre">RosServiceDirective</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosType"><code class="docutils literal notranslate"><span class="pre">RosType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx_ros.directives.RosTypedField"><code class="docutils literal notranslate"><span class="pre">RosTypedField</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_ros.domain.html">sphinx_ros.domain module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_ros.indices.html">sphinx_ros.indices module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_ros.xref_role.html">sphinx_ros.xref_role module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_ros.html#module-sphinx_ros">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../indices_and_tables.html">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ROS Sphinx domain</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="sphinx_ros.html">sphinx_ros package</a></li>
+      <li class="breadcrumb-item active">sphinx_ros.directives module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/sphinx_ros.directives.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sphinx_ros.directives">
+<span id="sphinx-ros-directives-module"></span><h1>sphinx_ros.directives module<a class="headerlink" href="#module-sphinx_ros.directives" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2><code class="docutils literal notranslate"><span class="pre">sphinx_ros.directives</span></code> module<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosActionDirective">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosActionDirective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosActionDirective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosActionDirective" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sphinx_ros.directives.RosType" title="sphinx_ros.directives.RosType"><code class="xref py py-class docutils literal notranslate"><span class="pre">RosType</span></code></a></p>
+<p>Description of a ROS action type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosCurrentPackageDirective">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosCurrentPackageDirective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosCurrentPackageDirective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosCurrentPackageDirective" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://www.sphinx-doc.org/en/master/extdev/markupapi.html#docutils.parsers.rst.Directive" title="(in Sphinx v8.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Directive</span></code></a></p>
+<p>This directive is just to tell Sphinx that we’re documenting stuff in this
+package, but links to this package will not lead here.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosCurrentPackageDirective.final_argument_whitespace">
+<span class="sig-name descname"><span class="pre">final_argument_whitespace</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sphinx_ros.directives.RosCurrentPackageDirective.final_argument_whitespace" title="Link to this definition"></a></dt>
+<dd><p>May the final argument contain whitespace?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosCurrentPackageDirective.has_content">
+<span class="sig-name descname"><span class="pre">has_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sphinx_ros.directives.RosCurrentPackageDirective.has_content" title="Link to this definition"></a></dt>
+<dd><p>May the directive have content?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosCurrentPackageDirective.option_spec">
+<span class="sig-name descname"><span class="pre">option_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#sphinx_ros.directives.RosCurrentPackageDirective.option_spec" title="Link to this definition"></a></dt>
+<dd><p>Mapping of option names to validator functions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosCurrentPackageDirective.optional_arguments">
+<span class="sig-name descname"><span class="pre">optional_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#sphinx_ros.directives.RosCurrentPackageDirective.optional_arguments" title="Link to this definition"></a></dt>
+<dd><p>Number of optional arguments after the required arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosCurrentPackageDirective.required_arguments">
+<span class="sig-name descname"><span class="pre">required_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#sphinx_ros.directives.RosCurrentPackageDirective.required_arguments" title="Link to this definition"></a></dt>
+<dd><p>Number of required directive arguments.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosField">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_arg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rolename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bodyrolename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RosXRefMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosMessageDirective">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosMessageDirective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosMessageDirective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosMessageDirective" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sphinx_ros.directives.RosType" title="sphinx_ros.directives.RosType"><code class="xref py py-class docutils literal notranslate"><span class="pre">RosType</span></code></a></p>
+<p>Description of a ROS message type.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosMessageDirective.add_object_to_domain_data">
+<span class="sig-name descname"><span class="pre">add_object_to_domain_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosMessageDirective.add_object_to_domain_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosMessageDirective.add_object_to_domain_data" title="Link to this definition"></a></dt>
+<dd><p>Add the object to the object lists of the ROS domain data.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosMessageDirective.option_spec">
+<span class="sig-name descname"><span class="pre">option_spec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">OptionSpec</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'deprecated':</span> <span class="pre">&lt;function</span> <span class="pre">flag&gt;,</span> <span class="pre">'noindex':</span> <span class="pre">&lt;function</span> <span class="pre">flag&gt;,</span> <span class="pre">'package':</span> <span class="pre">&lt;function</span> <span class="pre">unchanged&gt;}</span></em><a class="headerlink" href="#sphinx_ros.directives.RosMessageDirective.option_spec" title="Link to this definition"></a></dt>
+<dd><p>Mapping of option names to validator functions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://www.sphinx-doc.org/en/master/extdev/domainapi.html#sphinx.directives.ObjectDescription" title="(in Sphinx v8.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDescription</span></code></a></p>
+<p>Description of a general ROS object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.add_object_to_domain_data">
+<span class="sig-name descname"><span class="pre">add_object_to_domain_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject.add_object_to_domain_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject.add_object_to_domain_data" title="Link to this definition"></a></dt>
+<dd><p>Add the object to the object lists of the ROS domain data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.add_target_and_index">
+<span class="sig-name descname"><span class="pre">add_target_and_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject.add_target_and_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject.add_target_and_index" title="Link to this definition"></a></dt>
+<dd><p>Add cross-reference IDs and entries to self.indexnode, if applicable.</p>
+<p><em>name</em> is whatever <a class="reference internal" href="#sphinx_ros.directives.RosObject.handle_signature" title="sphinx_ros.directives.RosObject.handle_signature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handle_signature()</span></code></a> returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.get_index_text">
+<span class="sig-name descname"><span class="pre">get_index_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkgname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject.get_index_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject.get_index_text" title="Link to this definition"></a></dt>
+<dd><p>Return the text for the index entry of the object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.get_object_type_prefix">
+<span class="sig-name descname"><span class="pre">get_object_type_prefix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject.get_object_type_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject.get_object_type_prefix" title="Link to this definition"></a></dt>
+<dd><p>May return an optional name prefix that defines object type, e.g.
+‘msg’ or ‘srv’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.get_signature_prefix">
+<span class="sig-name descname"><span class="pre">get_signature_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sig</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject.get_signature_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject.get_signature_prefix" title="Link to this definition"></a></dt>
+<dd><p>May return a prefix to put before the object name in the signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.handle_signature">
+<span class="sig-name descname"><span class="pre">handle_signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosObject.handle_signature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosObject.handle_signature" title="Link to this definition"></a></dt>
+<dd><p>Transform a ROS signature into rST nodes.</p>
+<p>Return (fully qualified name of the thing, package name if any).</p>
+<p>If inside a package, the current package name is handled intelligently:
+* it is stripped from the displayed name if present
+* it is added to the full name (return value) if not present</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosObject.option_spec">
+<span class="sig-name descname"><span class="pre">option_spec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">OptionSpec</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'noindex':</span> <span class="pre">&lt;function</span> <span class="pre">flag&gt;,</span> <span class="pre">'package':</span> <span class="pre">&lt;function</span> <span class="pre">unchanged&gt;}</span></em><a class="headerlink" href="#sphinx_ros.directives.RosObject.option_spec" title="Link to this definition"></a></dt>
+<dd><p>Mapping of option names to validator functions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosPackageDirective">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosPackageDirective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosPackageDirective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosPackageDirective" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://www.sphinx-doc.org/en/master/extdev/markupapi.html#docutils.parsers.rst.Directive" title="(in Sphinx v8.3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Directive</span></code></a></p>
+<p>Directive to mark description of a new package.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosPackageDirective.final_argument_whitespace">
+<span class="sig-name descname"><span class="pre">final_argument_whitespace</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sphinx_ros.directives.RosPackageDirective.final_argument_whitespace" title="Link to this definition"></a></dt>
+<dd><p>May the final argument contain whitespace?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosPackageDirective.has_content">
+<span class="sig-name descname"><span class="pre">has_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sphinx_ros.directives.RosPackageDirective.has_content" title="Link to this definition"></a></dt>
+<dd><p>May the directive have content?</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosPackageDirective.option_spec">
+<span class="sig-name descname"><span class="pre">option_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'deprecated':</span> <span class="pre">&lt;function</span> <span class="pre">flag&gt;,</span> <span class="pre">'noindex':</span> <span class="pre">&lt;function</span> <span class="pre">flag&gt;}</span></em><a class="headerlink" href="#sphinx_ros.directives.RosPackageDirective.option_spec" title="Link to this definition"></a></dt>
+<dd><p>Mapping of option names to validator functions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosPackageDirective.optional_arguments">
+<span class="sig-name descname"><span class="pre">optional_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#sphinx_ros.directives.RosPackageDirective.optional_arguments" title="Link to this definition"></a></dt>
+<dd><p>Number of optional arguments after the required arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosPackageDirective.required_arguments">
+<span class="sig-name descname"><span class="pre">required_arguments</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#sphinx_ros.directives.RosPackageDirective.required_arguments" title="Link to this definition"></a></dt>
+<dd><p>Number of required directive arguments.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosServiceDirective">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosServiceDirective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosServiceDirective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosServiceDirective" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sphinx_ros.directives.RosType" title="sphinx_ros.directives.RosType"><code class="xref py py-class docutils literal notranslate"><span class="pre">RosType</span></code></a></p>
+<p>Description of a ROS service type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sphinx_ros.directives.RosObject" title="sphinx_ros.directives.RosObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">RosObject</span></code></a></p>
+<p>Super class for messages, services, and actions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType.add_object_to_domain_data">
+<span class="sig-name descname"><span class="pre">add_object_to_domain_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType.add_object_to_domain_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType.add_object_to_domain_data" title="Link to this definition"></a></dt>
+<dd><p>Add the object to the object lists of the ROS domain data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType.add_target_and_index">
+<span class="sig-name descname"><span class="pre">add_target_and_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType.add_target_and_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType.add_target_and_index" title="Link to this definition"></a></dt>
+<dd><p>Add cross-reference IDs and entries to self.indexnode, if applicable.</p>
+<p><em>name</em> is whatever <a class="reference internal" href="#sphinx_ros.directives.RosType.handle_signature" title="sphinx_ros.directives.RosType.handle_signature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handle_signature()</span></code></a> returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType.get_index_text">
+<span class="sig-name descname"><span class="pre">get_index_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkgname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType.get_index_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType.get_index_text" title="Link to this definition"></a></dt>
+<dd><p>Return the text for the index entry of the object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType.get_object_type_prefix">
+<span class="sig-name descname"><span class="pre">get_object_type_prefix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType.get_object_type_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType.get_object_type_prefix" title="Link to this definition"></a></dt>
+<dd><p>May return an optional name prefix that defines object type, e.g.
+‘msg’ or ‘srv’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType.get_signature_prefix">
+<span class="sig-name descname"><span class="pre">get_signature_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sig</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType.get_signature_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType.get_signature_prefix" title="Link to this definition"></a></dt>
+<dd><p>May return a prefix to put before the object name in the signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosType.handle_signature">
+<span class="sig-name descname"><span class="pre">handle_signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosType.handle_signature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosType.handle_signature" title="Link to this definition"></a></dt>
+<dd><p>Transform a ROS signature into rST nodes.</p>
+<p>Return (fully qualified name of the thing, package name if any).</p>
+<p>If inside a package, the current package name is handled intelligently:
+* it is stripped from the displayed name if present
+* it is added to the full name (return value) if not present</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx_ros.directives.RosTypedField">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx_ros.directives.</span></span><span class="sig-name descname"><span class="pre">RosTypedField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typenames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rolename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typerolename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">can_collapse</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sphinx_ros/directives.html#RosTypedField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sphinx_ros.directives.RosTypedField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RosXRefMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TypedField</span></code></p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sphinx_ros.html" class="btn btn-neutral float-left" title="sphinx_ros package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sphinx_ros.domain.html" class="btn btn-neutral float-right" title="sphinx_ros.domain module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, HawAI.tech.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

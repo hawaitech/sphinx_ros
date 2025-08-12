@@ -1,0 +1,6 @@
+sphinx\_ros.directives module
+=============================
+
+.. automodule:: sphinx_ros.directives
+   :members:
+   :show-inheritance:

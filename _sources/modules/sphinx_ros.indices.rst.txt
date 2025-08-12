@@ -1,0 +1,6 @@
+sphinx\_ros.indices module
+==========================
+
+.. automodule:: sphinx_ros.indices
+   :members:
+   :show-inheritance:

@@ -1,0 +1,6 @@
+sphinx\_ros.domain module
+=========================
+
+.. automodule:: sphinx_ros.domain
+   :members:
+   :show-inheritance:

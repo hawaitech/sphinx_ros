@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sphinx_ros.indices &mdash; ROS Sphinx domain 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/Icon_016x016.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/ROSphinx.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/sphinx_ros.html">sphinx_ros package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indices_and_tables.html">Indices and tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ROS Sphinx domain</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../sphinx_ros.html">sphinx_ros</a></li>
+      <li class="breadcrumb-item active">sphinx_ros.indices</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for sphinx_ros.indices</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">``sphinx_ros.indices`` module</span>
+<span class="sd">=============================</span>
+
+<span class="sd">This modules defines the indices added to Sphinx.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sphinx.domains</span><span class="w"> </span><span class="kn">import</span> <span class="n">Index</span>
+
+
+<div class="viewcode-block" id="RosMessageIndex">
+<a class="viewcode-back" href="../../modules/sphinx_ros.indices.html#sphinx_ros.indices.RosMessageIndex">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RosMessageIndex</span><span class="p">(</span><span class="n">Index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Index listing the documented message types.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;msgindex&#39;</span>
+    <span class="n">localname</span> <span class="o">=</span> <span class="s1">&#39;Message Type Index&#39;</span>
+    <span class="n">shortname</span> <span class="o">=</span> <span class="s1">&#39;msgs&#39;</span>
+
+<div class="viewcode-block" id="RosMessageIndex.generate">
+<a class="viewcode-back" href="../../modules/sphinx_ros.indices.html#sphinx_ros.indices.RosMessageIndex.generate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docnames</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># Get messages from domain data</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;messages&#39;</span><span class="p">]</span>
+        <span class="n">base_messages</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Split package name and make new dict.</span>
+        <span class="c1"># name -&gt; document name, anchor, priority, deprecated</span>
+        <span class="k">for</span> <span class="n">msgname</span><span class="p">,</span> <span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span> <span class="ow">in</span> <span class="n">messages</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">pkgname</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">base_msgname</span> <span class="o">=</span> <span class="n">msgname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+            <span class="n">base_messages</span><span class="p">[</span><span class="n">base_msgname</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pkgname</span><span class="p">,</span> <span class="n">docname</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span>
+                                           <span class="n">deprecated</span><span class="p">)</span>
+
+        <span class="c1"># Sort the messages in alphabetical order</span>
+        <span class="n">base_messages</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">base_messages</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+                               <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+        <span class="c1"># base_name -&gt; pkg name, document name, anchor, deprecated</span>
+        <span class="k">for</span> <span class="n">base_msgname</span><span class="p">,</span> <span class="p">(</span><span class="n">pkg</span><span class="p">,</span> <span class="n">docname</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span> <span class="ow">in</span> <span class="n">base_messages</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">docnames</span> <span class="ow">and</span> <span class="n">docname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">docnames</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">base_msgname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+                <span class="n">entries</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="n">base_msgname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="n">qualifier</span> <span class="o">=</span> <span class="n">deprecated</span> <span class="ow">and</span> <span class="s1">&#39;Deprecated&#39;</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">base_msgname</span> <span class="o">+</span> <span class="s1">&#39; (in </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pkg</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="n">docname</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">qualifier</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+            <span class="n">content</span><span class="p">[</span><span class="n">base_msgname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">entries</span>
+
+        <span class="n">content</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">content</span><span class="p">,</span> <span class="kc">True</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RosPackageIndex">
+<a class="viewcode-back" href="../../modules/sphinx_ros.indices.html#sphinx_ros.indices.RosPackageIndex">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RosPackageIndex</span><span class="p">(</span><span class="n">Index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Index listing the documented packages.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pkgindex&#39;</span>
+    <span class="n">localname</span> <span class="o">=</span> <span class="s1">&#39;Package Index&#39;</span>
+    <span class="n">shortname</span> <span class="o">=</span> <span class="s1">&#39;pkgs&#39;</span>
+
+<div class="viewcode-block" id="RosPackageIndex.generate">
+<a class="viewcode-back" href="../../modules/sphinx_ros.indices.html#sphinx_ros.indices.RosPackageIndex.generate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docnames</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Sort the packages in alphabetical order</span>
+        <span class="n">packages</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;packages&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+                          <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+        <span class="c1"># name -&gt; document name, anchor, priority, deprecated</span>
+        <span class="k">for</span> <span class="n">pkgname</span><span class="p">,</span> <span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span> <span class="ow">in</span> <span class="n">packages</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">docnames</span> <span class="ow">and</span> <span class="n">docname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">docnames</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">pkgname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+                <span class="n">entries</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="n">pkgname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="n">qualifier</span> <span class="o">=</span> <span class="n">deprecated</span> <span class="ow">and</span> <span class="s1">&#39;Deprecated&#39;</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">pkgname</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">docname</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">qualifier</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+            <span class="n">content</span><span class="p">[</span><span class="n">pkgname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">entries</span>
+
+        <span class="n">content</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">content</span><span class="p">,</span> <span class="kc">True</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, HawAI.tech.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

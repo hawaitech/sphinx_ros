@@ -1,0 +1,6 @@
+sphinx\_ros.xref\_role module
+=============================
+
+.. automodule:: sphinx_ros.xref_role
+   :members:
+   :show-inheritance:
