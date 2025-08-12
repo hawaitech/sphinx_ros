@@ -4,6 +4,7 @@
 
 This modules defines the indices added to Sphinx.
 """
+
 from sphinx.domains import Index
 
 
@@ -12,26 +13,24 @@ class RosMessageIndex(Index):
     Index listing the documented message types.
     """
 
-    name = 'msgindex'
-    localname = 'Message Type Index'
-    shortname = 'msgs'
+    name = "msgindex"
+    localname = "Message Type Index"
+    shortname = "msgs"
 
     def generate(self, docnames=None):
         content = {}
         # Get messages from domain data
-        messages = self.domain.data['messages']
+        messages = self.domain.data["messages"]
         base_messages = {}
 
         # Split package name and make new dict.
         # name -> document name, anchor, priority, deprecated
         for msgname, (docname, anchor, _, deprecated) in messages.items():
-            pkgname, _, base_msgname = msgname.split('.')
-            base_messages[base_msgname] = (pkgname, docname, anchor,
-                                           deprecated)
+            pkgname, _, base_msgname = msgname.split(".")
+            base_messages[base_msgname] = (pkgname, docname, anchor, deprecated)
 
         # Sort the messages in alphabetical order
-        base_messages = sorted(base_messages.items(),
-                               key=lambda x: x[0].lower())
+        base_messages = sorted(base_messages.items(), key=lambda x: x[0].lower())
 
         # base_name -> pkg name, document name, anchor, deprecated
         for base_msgname, (pkg, docname, anchor, deprecated) in base_messages:
@@ -43,9 +42,10 @@ class RosMessageIndex(Index):
             else:
                 entries = []
 
-            qualifier = deprecated and 'Deprecated' or ''
-            entries.append([base_msgname + ' (in {})'.format(pkg), 0,
-                            docname, anchor, '', qualifier, ''])
+            qualifier = deprecated and "Deprecated" or ""
+            entries.append(
+                [base_msgname + " (in {})".format(pkg), 0, docname, anchor, "", qualifier, ""]
+            )
             content[base_msgname[0].lower()] = entries
 
         content = sorted(content.items())
@@ -58,16 +58,15 @@ class RosPackageIndex(Index):
     Index listing the documented packages.
     """
 
-    name = 'pkgindex'
-    localname = 'Package Index'
-    shortname = 'pkgs'
+    name = "pkgindex"
+    localname = "Package Index"
+    shortname = "pkgs"
 
     def generate(self, docnames=None):
         content = {}
 
         # Sort the packages in alphabetical order
-        packages = sorted(self.domain.data['packages'].items(),
-                          key=lambda x: x[0].lower())
+        packages = sorted(self.domain.data["packages"].items(), key=lambda x: x[0].lower())
 
         # name -> document name, anchor, priority, deprecated
         for pkgname, (docname, anchor, _, deprecated) in packages:
@@ -79,8 +78,8 @@ class RosPackageIndex(Index):
             else:
                 entries = []
 
-            qualifier = deprecated and 'Deprecated' or ''
-            entries.append([pkgname, 0, docname, anchor, '', qualifier, ''])
+            qualifier = deprecated and "Deprecated" or ""
+            entries.append([pkgname, 0, docname, anchor, "", qualifier, ""])
             content[pkgname[0].lower()] = entries
 
         content = sorted(content.items())

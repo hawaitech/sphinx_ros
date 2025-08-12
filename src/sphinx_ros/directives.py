@@ -44,7 +44,15 @@ def split_pkg_object(signature, obj_type):
 # when it comes to handling "." and "~" prefixes.
 class RosXRefMixin(object):
     def make_xref(
-        self, rolename, domain, target, innernode=nodes.emphasis, contnode=None, env=None, inliner=None, location=None
+        self,
+        rolename,
+        domain,
+        target,
+        innernode=nodes.emphasis,
+        contnode=None,
+        env=None,
+        inliner=None,
+        location=None,
     ):
         result = super(RosXRefMixin, self).make_xref(
             rolename, domain, target, innernode, contnode, env, inliner, location
