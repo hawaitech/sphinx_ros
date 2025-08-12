@@ -13,6 +13,9 @@ sphinx_ros
   :target: https://sphinx-ros.readthedocs.io/en/latest/
   :alt: Documentation Status
 
+.. note::
+  This fork is currently under development. Some links may be broken 
+
 This extension adds reStructuredText directives that can be used to document
 ROS packages.
 
@@ -20,11 +23,11 @@ Usage
 -----
 
 Include the extension in your ``conf.py`` file. If you have no extensions yet,
-use::
+use:
 
   extensions = ['sphinx_ros']
 
-Otherwise use::
+Otherwise use:
 
   extensions.append('sphinx_ros')
 
