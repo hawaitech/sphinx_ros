@@ -5,22 +5,13 @@
 Sphinx extension adding several directives to document ROS packages.
 """
 
-try:
-    # For Python 3.8 and later
-    import importlib.metadata as importlib_metadata
-except ImportError:
-    # For everyone else
-    import importlib_metadata
-
+import importlib.metadata as importlib_metadata
+from sphinx.domains.std import StandardDomain
 from sphinx.util import logging
+from .domain import RosDomain
 
 logger = logging.getLogger(__name__)
 
-try:
-    from sphinx.domains import StandardDomain
-except ImportError:
-    from sphinx.domains.std import StandardDomain
-from .domain import RosDomain
 
 
 def setup(app):
