@@ -51,6 +51,7 @@ Messages
 ********
 
 .. ros:message:: Foo
+  :deprecated:
 
   We can add descriptions to the message and its parameters.
 

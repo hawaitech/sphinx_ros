@@ -27,6 +27,7 @@ ros_sig_re = re.compile(
 
 logger = logging.getLogger(__name__)
 
+
 def name_to_key(name):
     return name[0].upper()
 
@@ -225,7 +226,6 @@ class RosType(RosObject):
         elif self.objtype == "launch":
             return "launch"
         logger.warning("Unknown object type: {}".format(self.objtype))
-        
 
     def get_signature_prefix(self, sig):
         return self.objtype + " "
@@ -391,6 +391,7 @@ class RosServiceDirective(RosType):
         ),
     ]
 
+
 class RosLaunchDirective(RosType):
     """
     Description of a ROS launch service.
@@ -433,20 +434,45 @@ class RosExecutableDirective(RosType):
         RosTypedField(
             "exe_input",
             label="Input interfaces",
-            names=("exe_sub", "exe_insrv", "exe_inaction"),
+            names=(
+                "exe_sub",
+                "exe_inmsg",
+                "exe_insrv",
+                "exe_inac",
+                "exe_inaction",
+            ),
             typerolename="obj",
-            typenames=("exe_subtype", "exe_insrvtype", "exe_inactiontype"),
+            typenames=(
+                "exe_subtype",
+                "exe_inmsgtype",
+                "exe_insrvtype",
+                "exe_inactype",
+                "exe_inactiontype",
+            ),
             can_collapse=True,
         ),
         RosTypedField(
             "exe_publication",
             label="Output interfaces",
-            names=("exe_pub", "exe_outsrv", "exe_outaction"),
+            names=(
+                "exe_pub",
+                "exe_outmsg",
+                "exe_outsrv",
+                "exe_outac",
+                "exe_outaction",
+            ),
             typerolename="obj",
-            typenames=("exe_pubtype", "exe_outsrvtype", "exe_outactiontype"),
+            typenames=(
+                "exe_pubtype",
+                "exe_outmsgtype",
+                "exe_outsrvtype",
+                "exe_outactype",
+                "exe_outactiontype",
+            ),
             can_collapse=True,
         ),
     ]
+
 
 class RosMessageDirective(RosType):
     """
