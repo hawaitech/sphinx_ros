@@ -7,7 +7,6 @@ services, and actions) and registers the roles and directives in the Sphinx
 application.
 """
 
-from six import iteritems
 from docutils import nodes
 from sphinx.domains import Domain, ObjType
 from sphinx.util.nodes import make_refnode
@@ -154,10 +153,10 @@ class RosDomain(Domain):
                             title)
 
     def get_objects(self):
-        for pkgname, info in iteritems(self.data['packages']):
+        for pkgname, info in self.data['packages'].items():
             yield (pkgname, pkgname, 'package', info[0],
                    'package-' + pkgname, 0)
-        for refname, (docname, type) in iteritems(self.data['objects']):
+        for refname, (docname, type) in self.data['objects'].items():
             if type != 'package':
                 yield (refname, refname, type, docname, refname, 1)
 

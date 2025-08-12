@@ -4,7 +4,6 @@
 
 This modules defines the indices added to Sphinx.
 """
-from six import iteritems
 from sphinx.domains import Index
 
 
@@ -25,13 +24,13 @@ class RosMessageIndex(Index):
 
         # Split package name and make new dict.
         # name -> document name, anchor, priority, deprecated
-        for msgname, (docname, anchor, _, deprecated) in iteritems(messages):
+        for msgname, (docname, anchor, _, deprecated) in messages.items():
             pkgname, _, base_msgname = msgname.split('.')
             base_messages[base_msgname] = (pkgname, docname, anchor,
                                            deprecated)
 
         # Sort the messages in alphabetical order
-        base_messages = sorted(iteritems(base_messages),
+        base_messages = sorted(base_messages.items(),
                                key=lambda x: x[0].lower())
 
         # base_name -> pkg name, document name, anchor, deprecated
@@ -67,7 +66,7 @@ class RosPackageIndex(Index):
         content = {}
 
         # Sort the packages in alphabetical order
-        packages = sorted(iteritems(self.domain.data['packages']),
+        packages = sorted(self.domain.data['packages'].items(),
                           key=lambda x: x[0].lower())
 
         # name -> document name, anchor, priority, deprecated

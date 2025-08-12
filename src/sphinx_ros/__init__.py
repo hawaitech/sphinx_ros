@@ -4,21 +4,22 @@
 
 Sphinx extension adding several directives to document ROS packages.
 """
+try:
+    # For Python 3.8 and later
+    import importlib.metadata as importlib_metadata
+except ImportError:
+    # For everyone else
+    import importlib_metadata
 
-from pkg_resources import get_distribution, DistributionNotFound
+from sphinx.util import logging
+
+logger = logging.getLogger(__name__)
 
 try:
     from sphinx.domains import StandardDomain
 except ImportError:
     from sphinx.domains.std import StandardDomain
 from .domain import RosDomain
-
-try:
-    __version__ = get_distribution(__name__).version
-except DistributionNotFound:
-    # Package is not installed
-    __version__ = 'unknown'
-
 
 def setup(app):
     """
@@ -29,6 +30,8 @@ def setup(app):
     :param app: The Sphinx application
     :type app: sphinx.application.Sphinx
     """
+    version = importlib_metadata.version("sphinx-ros")
+    logger.info("Initializing ROS Sphinx domain %s", version)
     app.add_domain(RosDomain)
 
     app.add_config_value('ros_add_package_names', True, 'html')
@@ -40,7 +43,7 @@ def setup(app):
         update(RosDomain.initial_data['anonlabels'])
 
     return {
-        'version': __version__,
+        'version': version,
         'parallel_read_safe': False,
         'parallel_write_safe': True
     }
