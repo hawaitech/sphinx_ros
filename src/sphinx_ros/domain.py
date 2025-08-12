@@ -2,8 +2,8 @@
 ``sphinx_ros.domain`` module
 ============================
 
-This module defines the ROS domain. It defines three object types (messages,
-services, and actions) and registers the roles and directives in the Sphinx
+This module defines the ROS domain. It defines five object types (messages,
+services, actions, executable and launch) and registers the roles and directives in the Sphinx
 application.
 """
 
@@ -17,6 +17,8 @@ from .directives import (
     RosMessageDirective,
     RosActionDirective,
     RosServiceDirective,
+    RosLaunchDirective,
+    RosExecutableDirective,
 )
 from .indices import RosPackageIndex, RosMessageIndex
 
@@ -31,15 +33,26 @@ class RosDomain(Domain):
     object_types = {
         "message": ObjType("message", "msg", "obj"),
         "service": ObjType("service", "srv", "obj"),
-        "action": ObjType("action", "action", "obj"),
+        "action": ObjType("action", "act", "obj"),
+        "launch": ObjType("launch", "obj"),
+        "executable": ObjType("executable", "exe", "obj"),
     }
-    roles = {"pkg": RosXRefRole(), "msg": RosXRefRole(), "srv": RosXRefRole(), "act": RosXRefRole()}
+    roles = {
+        "pkg": RosXRefRole(),
+        "msg": RosXRefRole(),
+        "srv": RosXRefRole(),
+        "act": RosXRefRole(),
+        "launch": RosXRefRole(),
+        "exe": RosXRefRole(),
+    }
     directives = {
         "package": RosPackageDirective,
         "currentpackage": RosCurrentPackageDirective,
         "message": RosMessageDirective,
         "service": RosServiceDirective,
         "action": RosActionDirective,
+        "launch": RosLaunchDirective,
+        "executable": RosExecutableDirective,
     }
     initial_data = {
         "objects": {},  # fullname -> docname, objtype

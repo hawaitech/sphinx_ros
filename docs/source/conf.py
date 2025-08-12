@@ -32,7 +32,7 @@ extensions = [
 templates_path = ["_templates"]
 
 
-ros_msg_reference_version = "kinetic"
+ros_msg_reference_version = "jazzy"
 
 # General information about the project.
 project = "ROS Sphinx domain"

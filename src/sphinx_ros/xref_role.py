@@ -29,7 +29,14 @@ class RosXRefRole(XRefRole):
         "duration",
     ]
 
-    ros_api_pkgs = ["std_msgs", "geometry_msgs", "sensor_msgs"]
+    ros_api_pkgs = [
+        "geometry_msgs",
+        "nav_msgs",
+        "nav2_msgs",
+        "sensor_msgs",
+        "std_msgs",
+        "vision_msgs",
+    ]
 
     def process_link(self, env, refnode, has_explicit_title, title, target):
         refnode["ros:package"] = env.ref_context.get("ros:package")
@@ -49,12 +56,19 @@ class RosXRefRole(XRefRole):
         return title, target
 
     def result_nodes(self, document, env, node, is_ref):
-        if node["reftype"] in ["msg", "srv", "action"]:
+        if node["reftype"] in ["msg", "srv", "act", "exe", "launch"]:
             obj_type = node["reftype"]
             title = node.astext()
             target = node["reftarget"]
             if target.endswith("[]"):
                 target = target[:-2]
+
+            
+            ros_ver = env.config.ros_msg_reference_version
+            if ros_ver in ["jazzy", "humble"]:
+                doc_tpl = "https://docs.ros.org/en/" + ros_ver + "/p/{}/{}/{}.html"
+            else:
+                doc_tpl = "https://docs.ros.org/en/" + ros_ver + "/api/{}/html/{}/{}.html"
 
             # If reference to a ros message, service, or action
             if target in self.ros_msg_primitives:
@@ -64,11 +78,7 @@ class RosXRefRole(XRefRole):
             elif target == "Header":
                 # If the target is the message primitive "Header", then refer
                 # to that documentation.
-                target = (
-                    "http://docs.ros.org/"
-                    + env.config.ros_msg_reference_version
-                    + "/api/std_msgs/html/msg/Header.html"
-                )
+                target = doc_tpl.format("std_msgs", "msg", "Header")
                 ref_node = nodes.reference()
                 ref_node["refuri"] = target
                 text_node = nodes.literal(title, title)
@@ -83,11 +93,7 @@ class RosXRefRole(XRefRole):
                 if pkg in self.ros_api_pkgs:
                     # In the former case we link to the API documentation of
                     # ROS.
-                    target = (
-                        "http://docs.ros.org/"
-                        + env.config.ros_msg_reference_version
-                        + "/api/{}/html/{}/{}.html".format(pkg, obj_type, obj)
-                    )
+                    target = doc_tpl.format(pkg, obj_type, obj)
                     ref_node = nodes.reference()
                     ref_node["refuri"] = target
                     text_node = nodes.literal(title, title)

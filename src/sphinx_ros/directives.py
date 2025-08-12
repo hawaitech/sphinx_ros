@@ -7,6 +7,7 @@
 
 import re
 import sphinx
+from sphinx.util import logging
 
 from docutils import nodes
 from docutils.parsers.rst import directives, Directive
@@ -17,12 +18,14 @@ from sphinx.util.docfields import Field, TypedField
 
 ros_sig_re = re.compile(
     r"""^((?:[^\.]*\.)*?)         # package name
-         (?:(msg|srv|action)\.)?  # object type
+         (?:(msg|srv|action|executable|launch)\.)?  # object type
          (\w+) \s*?$              # thing name
      """,
     re.VERBOSE,
 )
 
+
+logger = logging.getLogger(__name__)
 
 def name_to_key(name):
     return name[0].upper()
@@ -217,6 +220,12 @@ class RosType(RosObject):
             return "srv"
         elif self.objtype == "action":
             return "action"
+        elif self.objtype == "executable":
+            return "exe"
+        elif self.objtype == "launch":
+            return "launch"
+        logger.warning("Unknown object type: {}".format(self.objtype))
+        
 
     def get_signature_prefix(self, sig):
         return self.objtype + " "
@@ -382,6 +391,62 @@ class RosServiceDirective(RosType):
         ),
     ]
 
+class RosLaunchDirective(RosType):
+    """
+    Description of a ROS launch service.
+    """
+
+    doc_field_types = [
+        RosTypedField(
+            "launch_argument",
+            label="Launch arguments",
+            names=("launch_arg",),
+            typerolename="obj",
+            typenames=("launch_argtype",),
+            can_collapse=True,
+        ),
+        RosTypedField(
+            "launch_executable",
+            label="Launched executables",
+            names=("launch_exe",),
+            typerolename="obj",
+            typenames=("launch_exetype",),
+            can_collapse=True,
+        ),
+    ]
+
+
+class RosExecutableDirective(RosType):
+    """
+    Description of a ROS executable.
+    """
+
+    doc_field_types = [
+        RosTypedField(
+            "exe_parameter",
+            label="Parameters",
+            names=("exe_param",),
+            typerolename="obj",
+            typenames=("exe_paramtype",),
+            can_collapse=True,
+        ),
+        RosTypedField(
+            "exe_input",
+            label="Input interfaces",
+            names=("exe_sub", "exe_insrv", "exe_inaction"),
+            typerolename="obj",
+            typenames=("exe_subtype", "exe_insrvtype", "exe_inactiontype"),
+            can_collapse=True,
+        ),
+        RosTypedField(
+            "exe_publication",
+            label="Output interfaces",
+            names=("exe_pub", "exe_outsrv", "exe_outaction"),
+            typerolename="obj",
+            typenames=("exe_pubtype", "exe_outsrvtype", "exe_outactiontype"),
+            can_collapse=True,
+        ),
+    ]
 
 class RosMessageDirective(RosType):
     """
